@@ -8,4 +8,5 @@ public interface IBoard {
     List<IBoardCell> getBoardCells();
     IBoardCell getBoardCell(int x, int y);
     void initializeBoardCells(int boardSize);
+    int getBoardSize();
 }

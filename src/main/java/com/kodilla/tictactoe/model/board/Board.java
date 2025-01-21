@@ -3,6 +3,7 @@ package com.kodilla.tictactoe.model.board;
 import com.kodilla.tictactoe.model.boardcell.BoardCell;
 import com.kodilla.tictactoe.model.boardcell.IBoardCell;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Board implements IBoard {
@@ -16,6 +17,7 @@ public class Board implements IBoard {
 
     @Override
     public void initializeBoardCells(int boardSize) {
+        this.boardCells = new ArrayList<>();
         for (int i=0; i<size; i++) {
             for (int j=0; j<size; j++) {
                 boardCells.add(new BoardCell(i, j));
@@ -34,5 +36,10 @@ public class Board implements IBoard {
                 .filter(cell -> cell.getXCoordinate() == x && cell.getYCoordinate() == y)
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public int getSize() {
+        return size;
     }
 }
