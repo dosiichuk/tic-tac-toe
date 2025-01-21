@@ -1,5 +1,8 @@
 package com.kodilla.tictactoe.model.player;
 
-public interface IPlayer {
+import com.kodilla.tictactoe.model.enums.PlayerType;
 
+public interface IPlayer {
+    PlayerType getPlayerType();
+    int getPlayerId();
 }
