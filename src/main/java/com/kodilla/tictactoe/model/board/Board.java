@@ -27,7 +27,7 @@ public class Board implements IBoard {
 
     @Override
     public List<IBoardCell> getBoardCells() {
-        return List.of();
+        return boardCells;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Board implements IBoard {
     }
 
     @Override
-    public int getSize() {
+    public int getBoardSize() {
         return size;
     }
 }

@@ -1,5 +1,6 @@
 package com.kodilla.tictactoe;
 
+import com.kodilla.tictactoe.services.aiplayerservice.AIPlayerService;
 import com.kodilla.tictactoe.services.gameservice.GameService;
 import com.kodilla.tictactoe.services.gameservice.IGameService;
 import com.kodilla.tictactoe.services.resultservice.IResultService;
@@ -12,8 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public static void main(String[] args) {
-		IResultService resultService = new ResultService();
-		IGameService gameService = new GameService(resultService);
+		IGameService gameService = new GameService(new ResultService(), new AIPlayerService());
 		new View(gameService).run();
 	}
 

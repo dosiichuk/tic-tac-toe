@@ -16,4 +16,6 @@ public interface IGameService {
     PlayerType getAdversaryType();
     void processPlayerMove(int x, int y, int playerIndex);
     void processAIMove();
+    IPlayer getWinner();
+    boolean checkIfCellIsTaken(int x, int y);
 }
